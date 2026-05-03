@@ -1,0 +1,12 @@
+Gemini API client initialized (using cloud model for /api/diagnose).
+Local ML bundle loaded (structured symptoms model).
+ * Serving Flask app 'app'
+ * Debug mode: on
+Gemini API client initialized (using cloud model for /api/diagnose).
+Local ML bundle loaded (structured symptoms model).
+No valid GEMINI_API_KEY in backend/.env — using local ML for /api/diagnose.
+Local ML bundle loaded (structured symptoms model).
+No valid GEMINI_API_KEY in backend/.env — using local ML for /api/diagnose.
+Local ML bundle loaded (structured symptoms model).
+No valid GEMINI_API_KEY in backend/.env — using local ML for /api/diagnose.
+Local ML bundle loaded (structured symptoms model).

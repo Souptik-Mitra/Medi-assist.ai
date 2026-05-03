@@ -1,0 +1,100 @@
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.7:5000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 107-171-860
+ * Detected change in 'C:\\Users\\03399\\Desktop\\Medi-assist\\backend\\app.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 107-171-860
+ * Detected change in 'C:\\Users\\03399\\Desktop\\Medi-assist\\backend\\app.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 107-171-860
+ * Detected change in 'C:\\Users\\03399\\Desktop\\Medi-assist\\backend\\app.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 107-171-860
+127.0.0.1 - - [03/May/2026 16:58:49] "POST /api/diagnose HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "C:\Users\03399\Desktop\Medi-assist\backend\venv\Lib\site-packages\flask\app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\03399\Desktop\Medi-assist\backend\venv\Lib\site-packages\flask\app.py", line 1476, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\03399\Desktop\Medi-assist\backend\venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\03399\Desktop\Medi-assist\backend\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\03399\Desktop\Medi-assist\backend\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\03399\Desktop\Medi-assist\backend\venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\03399\Desktop\Medi-assist\backend\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\03399\Desktop\Medi-assist\backend\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\03399\Desktop\Medi-assist\backend\app.py", line 95, in diagnose
+    label = predict_local_ml(age, gender, symptoms)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\03399\Desktop\Medi-assist\backend\app.py", line 63, in predict_local_ml
+    return pipe.predict(X)[0]
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\03399\Desktop\Medi-assist\backend\venv\Lib\site-packages\sklearn\pipeline.py", line 603, in predict
+    return self.steps[-1][1].predict(Xt, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\03399\Desktop\Medi-assist\backend\venv\Lib\site-packages\sklearn\ensemble\_forest.py", line 905, in predict
+    proba = self.predict_proba(X)
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\03399\Desktop\Medi-assist\backend\venv\Lib\site-packages\sklearn\ensemble\_forest.py", line 958, in predict_proba
+    Parallel(n_jobs=n_jobs, verbose=self.verbose, require="sharedmem")(
+  File "C:\Users\03399\Desktop\Medi-assist\backend\venv\Lib\site-packages\sklearn\utils\parallel.py", line 67, in __call__
+    return super().__call__(iterable_with_config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\03399\Desktop\Medi-assist\backend\venv\Lib\site-packages\joblib\parallel.py", line 1950, in __call__
+    next(output)
+  File "C:\Users\03399\Desktop\Medi-assist\backend\venv\Lib\site-packages\joblib\parallel.py", line 1588, in _get_outputs
+    self._start(iterator, pre_dispatch)
+  File "C:\Users\03399\Desktop\Medi-assist\backend\venv\Lib\site-packages\joblib\parallel.py", line 1571, in _start
+    if self.dispatch_one_batch(iterator):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\03399\Desktop\Medi-assist\backend\venv\Lib\site-packages\joblib\parallel.py", line 1462, in dispatch_one_batch
+    self._dispatch(tasks)
+  File "C:\Users\03399\Desktop\Medi-assist\backend\venv\Lib\site-packages\joblib\parallel.py", line 1384, in _dispatch
+    job = self._backend.apply_async(batch, callback=batch_tracker)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\03399\Desktop\Medi-assist\backend\venv\Lib\site-packages\joblib\_parallel_backends.py", line 282, in apply_async
+    return self._get_pool().apply_async(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\03399\Desktop\Medi-assist\backend\venv\Lib\site-packages\joblib\_parallel_backends.py", line 450, in _get_pool
+    self._pool = ThreadPool(self._n_jobs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\multiprocessing\pool.py", line 930, in __init__
+    Pool.__init__(self, processes, initializer, initargs)
+  File "C:\Program Files\Python312\Lib\multiprocessing\pool.py", line 196, in __init__
+    self._change_notifier = self._ctx.SimpleQueue()
+                            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\multiprocessing\context.py", line 113, in SimpleQueue
+    return SimpleQueue(ctx=self.get_context())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\multiprocessing\queues.py", line 342, in __init__
+    self._reader, self._writer = connection.Pipe(duplex=False)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\multiprocessing\connection.py", line 557, in Pipe
+    h2 = _winapi.CreateFile(
+         ^^^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied
+ * Detected change in 'C:\\Users\\03399\\Desktop\\Medi-assist\\backend\\app.py', reloading
+ * Restarting with stat
+127.0.0.1 - - [03/May/2026 16:59:45] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [03/May/2026 16:59:47] "POST /api/diagnose HTTP/1.1" 200 -

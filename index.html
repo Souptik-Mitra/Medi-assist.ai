@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medi-Assist.AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons for UI Elements -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="light-mode">
+    <div class="app-container">
+        <!-- Sidebar for History -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="ph ph-clock-counter-clockwise"></i> History</h2>
+            </div>
+            <div class="history-list" id="history-list">
+                <!-- History items injected here via JS -->
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header>
+                <div class="logo">
+                    <i class="ph-fill ph-heartbeat"></i>
+                    <h1>Medi-Assist.AI</h1>
+                </div>
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">
+                    <i class="ph ph-moon" id="theme-icon"></i>
+                </button>
+            </header>
+
+            <!-- Disclaimer -->
+            <div class="disclaimer-banner">
+                <i class="ph-fill ph-warning-circle"></i>
+                <p><strong>Educational Purpose Only:</strong> The insights provided by this AI do not replace professional medical advice, diagnosis, or treatment. Always consult a licensed healthcare provider for medical concerns.</p>
+            </div>
+
+            <section class="consultation-area">
+                <div class="card input-card">
+                    <h2>Describe Your Symptoms</h2>
+                    <form id="symptom-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="age">Age</label>
+                                <input type="number" id="age" name="age" min="0" max="120" placeholder="e.g. 34" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="gender">Gender</label>
+                                <select id="gender" name="gender" required>
+                                    <option value="" disabled selected>Select gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                    <option value="Prefer not to say">Prefer not to say</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="symptoms">Symptoms</label>
+                            <textarea id="symptoms" name="symptoms" rows="4" placeholder="Describe how you are feeling... e.g. I have a headache and a mild fever since yesterday." required></textarea>
+                        </div>
+                        <button type="submit" id="analyze-btn" class="primary-btn">
+                            <span>Analyze Symptoms</span>
+                            <i class="ph-bold ph-sparkle"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Loading State -->
+                <div id="loading" class="loading hidden">
+                    <div class="spinner"></div>
+                    <p>Analyzing symptoms…</p>
+                </div>
+
+                <!-- Results Display -->
+                <div id="results" class="results-container hidden">
+                    <!-- Dynamic content will be rendered here -->
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
